@@ -114,23 +114,5 @@
     "type": "git",
     "url": "git+ssh://git@github.com/angular-translate/angular-translate.git"
   },
-  "scripts": {
-    "build": "npm run-script -s check-env && grunt build",
-    "build-site": "npm run -s build-site-all-languages; npm run -s build-site-plato-report",
-    "build-site-all-languages": "./build_tools/generate_site.sh",
-    "build-site-by-language": "./build_tools/generate_site_by_language.sh",
-    "build-site-plato-report": "rm -rf ./site/plato && plato -d plato -l .jshintrc src/*.js src/**/*.js && mv plato site",
-    "check-env": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json",
-    "clean-test-scopes": "for f in test_scopes/*; do (cd $f; rm -rf bower_components); done",
-    "compile": "npm run-script -s check-env && grunt compile",
-    "lint": "grunt lint",
-    "prepare": "bower install",
-    "shipit": "npm run-script -s check-env && bower install && bower update && grunt prepare-release",
-    "start-demo": "node build_tools/server.js",
-    "test": "npm run-script -s check-env && grunt install-test && grunt test",
-    "test-headless": "npm run-script -s check-env && grunt test-headless",
-    "test-scopes": "npm run-script -s check-env && grunt install-test && for f in test_scopes/*; do TEST_SCOPE=\"`basename $f`\" grunt test; done",
-    "upload-github-release": "node build_tools/upload-github-release.js"
-  },
   "version": "2.17.0"
 }
